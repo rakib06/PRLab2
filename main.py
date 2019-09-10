@@ -29,14 +29,14 @@ n = ''
 filename = ''
 def inputStart(file):
     global n,trainFile,filename
+
     n=int(input("Enter the value of Test size:"))
     filename  = file
     #filename = 'bioCorpus.txt'
     trainFile=open(filename).read()
-
 inputStart('bioCorpus.txt')
-
-#Tokeinze them word by word
+#inputStart('tinyCorpus.txt')
+#Tokeinze them word by word / build in function
 tokenized_word=word_tokenize(trainFile)
 #All in small Letter
 for w in tokenized_word:
@@ -46,23 +46,24 @@ with open(filename, "r") as input:
     text= input.read().split("\n\n" or '\n\n\n')
 #Saving The original Copy in other File:
 mainfile=text
-
+print("mainfile: ",mainfile)
 
 #Tokenize By sentence:
 for i in range(len(text)-6):
     text[i]=sent_tokenize(text[i])
     file.append(text[i])
 
+print("file",file)
 
 #Converting in String:
 for i in range(len(file)):
     file[i]=str(file[i])
 
-
+print("file",file)
 #Splitting it by New Line
 for i in range(len(file)):
     file[i]=file[i].split('\\n')
-
+print("file",file)
 
 #All Categories with Index
 for i in range(len(file)):
